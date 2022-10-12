@@ -1,0 +1,54 @@
+每次commit就是一次提交
+
+查看文件状态
+git status
+
+将所有修改放进暂存区
+git add . 通配符
+
+chagnes to be committed 准备被提交
+
+提交暂存区到本地仓库
+git commit -m "add file01" 提交文件 引号里面是注释内容
+
+查看提交日志
+git log 查看文件提交到哪里了
+git log --pretty=oneline // 用一行输出信息
+git log --pretty=oneline --abbrev-commit // 一行缩写打印信息
+git log --pretty=oneline --abbrev-commit --all
+git log --pretty=oneline --abbrev-commit --all --graph
+git log --pretty=oneline --abbrev-commit -all --graph --decorate // 这个decorate在windows下默认是打开的，除非是mac
+
+vi file01.txt // 用vim打开文件
+
+clear // 清楚屏幕
+
+选中就是复制，按一下中键贴上
+
+git reset --hard 9736ae1 // 返回对应版本号
+回退之后，只要输入版本号就可以回去对应版本
+
+git reflog // 所有操作的日志 在clear之后使用
+
+touch .gitignore // 创建一个文件放不想被修改的文件
+
+在gitignore文件里面打
+*.a // 通配符，所有后缀名为.a的文件都不会被修改
+
+rm -rf .gitignore // 删除.gitignore文件
+rm .gitignore // 一样
+
+mv file01 file02 // 将file01重命名为file02
+
+练习
+初始化仓库 git init
+创建文件 touch file01.txt
+将修改存入暂存区 git add .
+将修改提交到本地仓库 git commit -m "commit001" // 引号内是注释
+查看日志 git log
+修改文件
+vi file01.txt // 用vim打开文件，然后修改
+命令行模式下，:wq // 存储并退出
+git commit -m "update file01.txt"
+git log
+git reset --hard 版本号
