@@ -1,0 +1,65 @@
+GIT基本概念
+开发中的实际场景
+1.备份
+2.代码还原：返回代码之前的某一个版本
+3.协同开发
+4.追溯问题代码的编写人和编写时间
+
+版本控制器的方式
+1.集中式版本控制工具
+版本库是集中存放在中央处理器的，每个人工作时从中央服务器下载代码，是必须联网才能工作，局域网或互联网，个人修改后提交到中央版本库
+例子：SVN和CVS
+
+2.分布式版本控制工具
+没有中央处理器，每个人的电脑上都是一个完整的版本库，无需联网，因为版本库就在你自己的电脑，多人协作只需要将各自的修改推送给对方，就能互相看到对方的修改
+例子：git
+
+共享版本库 - 远程仓库
+每一个人电脑上有一个本地仓库
+
+git的准则
+速度
+简单的设计
+对非线性开发的强力支持（允许成千上万并行开发的分支）
+完全分布式
+有能力管理类似linuxn内核一样的超大规模项目（速度和数据量）
+
+git工作流程
+clone 克隆：从远程仓库克隆代码到本地仓库
+checkout 检出：从本地仓库检出一个仓库分支然后进行修订
+Add 添加：在提交前先将代码提交到暂存区
+Commit 提交：提交到本地仓库，本地仓库仲保存修改的各个历史版本
+Fetch 抓取：从远程库，抓取到本地仓库，不进行任何合并动作，一半操作比较少
+pull 拉取：从远程库拉到本地库，自动进行合并，然后放到工作区，相当于fetch+merge
+push 推送：修改完成后，需要和团员共享代码，将代码推送到远程仓库
+
+ls/ll 查看当前目录
+cat 查看文件内容
+touch 创建文件
+vi vi编辑器
+
+Git gui 图形界面工具
+Git bash 命令行工具
+
+当安装git首先要做的事情是设置用户名称和email地址。这是非常重要的，因为每次git提交都会使用用户信息
+
+设置用户信息
+git config --global user.name "Njasoo"
+git config --global user.email "jason749573@163.com"
+
+查看配置信息
+git config --global user.name
+git config --global user.email
+
+为常用指令配置别名（可选）
+部分windows系统不允许用户创建点号开头的文件
+可以打开gitBash执行touch ~/.bashrc
+
+~表示当前用户的根目录
+
+解决gitBash乱码问题
+1.打开gitbash执行下面命令
+git config --global core.quotepath false
+2.${git_home}/etc/bash.bashrc 文件最后加入下面两行
+export LANG="zh_CN.UTF-8"
+export LC_ALL="zh_CN.UTF-8"
