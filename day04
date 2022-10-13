@@ -1,0 +1,29 @@
+分支
+(HEAD -> master)
+
+master就是一个分支
+
+查看分支
+git branch
+
+创建分支
+git branch dev01 // 在branch后面加个分支名即可
+
+工作区只能处理一个分支
+
+切换分支
+git checkout dev01
+
+HEAD -> master // head指向谁谁就是当前分支
+
+git checkout -b 分支名 // 创建并切换
+
+切换分支的时候，只能看到这个分支的文件，看不到其他分支的文件
+一般情况下，我们把其他分支合并到master分支上
+
+git merge 分支名 // 把另一分支合并到当前分支中（需要先切换到要合并到的分支上）
+输入这句语句后会出现一个像vim的界面，进入命令行模式，输入:wq即可
+
+删除分支
+git branch -d dev02 // 需要做检查，才能删除
+git branch -D dev02 // 不做任何检查，强制删除
